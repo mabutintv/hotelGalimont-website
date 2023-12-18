@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Management</title>
+    <link rel="stylesheet" href="styles.css" type="text/css">
+</head>
+<body>
+    <header>
+        
+        <a href="#home" class="Logo">
+            <img src="logo.png" alt="Galimont Hotel Logo"></a>
+        <nav>
+            <a href="#home" style="--clr:#fcf9f8;" class="active">Home</a>
+            <a href="#about" style="--clr:#dfbbf6;">About</a>
+            <a href="#service" style="--clr:#7f7f21;">Service</a> 
+            <a href="#rooms" style="--clr:#c10404ee;">Rooms</a>
+            <a href="#contact" style="--clr:#5ad3d1;">Contact</a>
+            <a href="login.php" class="login">Login</a>
+            <a href="Signup.php" class="signup">Sign Up</a>
+            <a href="#book-now" style="--clr:#02981d;" class="book-now-btn">Book Now</a>
+        </nav>
+    </header>
+        <section id="home">
+            <h1>Welcome to the GALIMONT HOTEL</h1>
+            <p>Experience luxury and comfort in our exquisite hotel. Enjoy world-class amenities and personalized services.</p>
+        </section>
+    
+    
+    </section>
+    <section id="book-now" style="--clr:rgb(39, 24, 24);">
+    <div class="container">
+        <h1 class="text-center mt-4 mb-4">Book Now</h1>
+        <form action="#" method="post">
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" class="form-control" required>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="check-in">Check-In Date:</label>
+                    <input type="date" id="check-in" name="check-in" class="form-control" required>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="check-out">Check-Out Date:</label>
+                    <input type="date" id="check-out" name="check-out" class="form-control" required>
+                </div>
+
+                <div class="form-group col-md-12">
+                    <label for="comments">Additional Comments:</label>
+                    <textarea id="comments" name="comments" rows="4" class="form-control"></textarea>
+                </div>
+
+                <div class="form-group col-md-12">
+                    <button class="btn btn-primary btn-block" type="submit">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+<section id="about">
+    <div class="container">
+        <h1>About Us</h1>
+
+        <p>Galimont Hotel is a cozy waterfront hotel located in the main street in the beautiful town of San Isidro in Northern Samar. We provide a safe and clean home away from home to all our guests. Pharmacy and a grocery shop available 10 hours daily in the first floor.</p>
+        <p>When you stay with us, enjoy swimming in the fresh and clean water in front. You can also dock your motorboats in the waterfront to take you on your island tours. The hotel is within minutes away from waterfalls and beaches, and within walking distance to restaurants in the town.</p>
+    </div>
+</section>
+    <section id="service" style="--clr:#7f7f21;">
+        <h1>Our Services</h1>
+        <p>Explore our wide range of services, including room accommodations, dining, spa, and event hosting. We aim to make your stay memorable.</p>
+    </section>
+    <section id="rooms" style="--clr:#0e7600;">
+        <h1>Rooms</h1>
+        <section class="image-section">
+            <div class="container">
+                <img src="logo.png" alt="Room 1" class="image">
+                <div class="overlay">
+                    <div class="text">Deluxe Room</div>
+                </div>
+            </div>
+            
+            <div class="container">
+                <img src="logo.png" alt="Room 2" class="image">
+                <div class="overlay">
+                    <div class="text">Executive Suite</div>
+                </div>
+            </div>
+          
+            <div class="container">
+                <img src="logo.png" alt="Room 3" class="image">
+                <div class="overlay">
+                    <div class="text">Luxury Villa</div>
+                </div>
+            </div>
+    
+            <!-- Add more rooms following the same structure -->
+        </section>
+    </section>
+    
+
+
+    <section id="contact" style="--clr:#5ad3d1;">
+        <h1>Contact Us</h1>
+        <p>Have questions or ready to make a reservation? Reach out to our team. We are here to assist you and make your stay enjoyable.</p>
+    </section>
+
+    <script>
+        let sections = document.querySelectorAll('section');
+        let links = document.querySelectorAll('nav a');
+        window.onscroll = () => {
+            let scrollY = window.scrollY;
+
+            sections.forEach(section => {
+                let offset = section.offsetTop - 60;
+                let height = section.offsetHeight;
+                let id = section.getAttribute('id');
+
+                if (scrollY >= offset && scrollY < offset + height) {
+                    links.forEach(link => {
+                        link.classList.remove('active');
+                    });
+
+                    document.querySelector('nav a[href="#' + id + '"]').classList.add('active');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
